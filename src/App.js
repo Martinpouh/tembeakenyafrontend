@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// client/src/components/App.js
+import { useState, useEffect } from "react";
+import { Route } from "react-router-dom";
+import AuthenticatedApp from "./components/AuthenticatedApp";
+import UnauthenticatedApp from "./components/UnauthenticatedApp";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [authChecked, setAuthChecked] = useState(false)
+
+  useEffect(() => {
+    fetch("/me")
+      .then((resp) => {
+        if (resp.ok) {
+          resp.json().then(user => {
+            setCurrentUser(user)
+            setAuthChecked(true)
+          })
+        } else {
+          setAuthChecked(true)
+        }
+      })
+  }, []);
+
+  if(!authChecked) { return <div></div> }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Route>
+      { currentUser ? (
+          <AuthenticatedApp setCurrentUser={setCurrentUser} currentUser = {currentUser}/>
+        ) : (
+          <UnauthenticatedApp setCurrentUser={setCurrentUser}/>
+        )
+      }
+    </Route>
+  )
 }
 
 export default App;
