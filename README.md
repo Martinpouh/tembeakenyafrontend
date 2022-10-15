@@ -70,7 +70,8 @@ To contribute or COllaborate follow these steps:
 ---
 
 ## SCREENSHOTS
-![Screenshot from 2022-10-14 20-21-28](https://user-images.githubusercontent.com/24671358/195906021-5e12a594-d6e2-43ae-9a42-b5a5615b8866.png)
+![Screenshot from 2022-10-15 09-51-39](https://user-images.githubusercontent.com/24671358/195973678-5baa609f-8967-422b-8235-0949c939f4bf.png)
+![Screenshot from 2022-10-15 09-52-01](https://user-images.githubusercontent.com/24671358/195973681-2d1f404d-5c2f-4e1a-a67d-2922b5c488a7.png)
 
 \- Click this link to see the live website )
 
