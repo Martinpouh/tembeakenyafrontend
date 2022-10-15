@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Tembea Kenya
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## By Martin Chege
 
-## Available Scripts
+### landing page
 
-In the project directory, you can run:
+![Tembea Kenya]
 
-### `npm start`
+## Table of Content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Description](#description)
+- [Features](#features)
+- [Development](#development)
+- [Live Link](#live-link)
+- [Setup Instructions and Technology](#technology-used)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_Tembea Kenya_ is a website application that is built using React Library on the front end and Rails on the backend. Tembea Kenya helps tourist book flights to their destinations around Kenya.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A user visiting this page would be able to see the login/signup page first then All the Kenyan flights their own flight and they can also add flights:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. A home page that has all the Kenyan flights.
 
-### `npm run eject`
+2. A top navigation section with links to logout, add flights, check their flights and all available flights.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Technology Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Used Visual Studio Code editor to create the front-end with _**React**_ and backend with _**Rails**_, _**Postgresql**_
 
-## Learn More
+- **DB Diagram** - Draw Entity-Relationship Diagrams: https://dbdiagram.io/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Figma** - Designed with: Figma https://www.figma.com/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **HTML** 
+  
+- **React** - help in creating interactive website
 
-### Code Splitting
+- **CSS** - Styling.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## _**Rails**_, _**Postgresql**_ helped in creating the database, the models, controllers, actions and the api endpoints to use in the client side.
 
-### Analyzing the Bundle Size
+## Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+To contribute or COllaborate follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Fork the repo
+- Run npm install in the client repository and bundle install in the backend repository to download the dependencies.
+- Create a new branch (git checkout -b enhance-feature)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (git commit -m 'Enhanced feature')
+- Push to the branch (git push origin enhance-feature)
+- Create a Pull Request
 
-### Advanced Configuration
+### Live Link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## SCREENSHOTS
+![Screenshot from 2022-10-14 20-21-28](https://user-images.githubusercontent.com/24671358/195906021-5e12a594-d6e2-43ae-9a42-b5a5615b8866.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+\- Click this link to see the live website )
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+## Contact Information
+* Email : martin.chege@student.moringaschool.com
+***** 
+
+## [License](LICENSE)
+MIT License
+Copyright (c) 2022 Martin Chege
+
