@@ -6,7 +6,7 @@ import FlightDetailPage from "./FlightDetailPage";
 import FlightsBooked from "./FlightsBooked";
 import FlightsPage from "./FlightsPage";
 
-function AuthenticatedApp({ currentPassenger, setCurrentPassenger }) {
+function AuthenticatedApp({ currentUser, setCurrentUser }) {
 
     const [flightsArr, setFlightsArr] = useState([])
     const [flightsBookedArr, setFlightsBookedArr] = useState([])
@@ -64,7 +64,7 @@ function AuthenticatedApp({ currentPassenger, setCurrentPassenger }) {
         })
         .then(resp => {
             if (resp.ok) {
-                setCurrentPassenger(null)
+                setCurrentUser(null)
                 history.push("/")
             }
         })
@@ -75,7 +75,7 @@ function AuthenticatedApp({ currentPassenger, setCurrentPassenger }) {
         <Header handleLogout={handleLogout}/>
             <Switch>
                 <Route path="/flights/:id">
-                    <FlightDetailPage deleteFlight={deleteFlight} currentPassenger={currentPassenger}/>
+                    <FlightDetailPage deleteFlight={deleteFlight} currentUser={currentUser}/>
                 </Route>
                 <Route path="/flightsbooked">
                     <FlightsBooked flightsBookedArr={flightsBookedArr}/>

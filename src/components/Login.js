@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-function Login({ setCurrentPassenger }) {
+function Login({ setCurrentUser }) {
   const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -17,8 +17,8 @@ function Login({ setCurrentPassenger }) {
     })
       .then(res => {
         if (res.ok) {
-          res.json().then(passenger => {
-            setCurrentPassenger(passenger)
+          res.json().then(user => {
+            setCurrentUser(user)
             history.push('/flights')
           })
         } else {

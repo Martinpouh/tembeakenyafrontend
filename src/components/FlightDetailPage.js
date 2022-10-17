@@ -5,7 +5,7 @@ import ScheduleContainer from "./ScheduleContainer";
 import TravelCard from "./TravelCard";
 import { useHistory } from "react-router-dom";
 
-function FlightDetailPage({ deleteFlight, currentPassenger }) {
+function FlightDetailPage({ deleteFlight, currentUser }) {
 
     const [isLoaded, setIsLoaded] = useState(false);
     const [flightObj, setFlightObj] = useState({
@@ -17,8 +17,8 @@ function FlightDetailPage({ deleteFlight, currentPassenger }) {
         end_date: "",
         image: "",
         budget: 0,
-        passengers: [],
-        passenger_flight: {}
+        users: [],
+        user_flight: {}
     })
     const [isEditable, setIsEditable] = useState(false)
     const [schedulesArray, setSchedulesArray] = useState([])
@@ -39,7 +39,7 @@ function FlightDetailPage({ deleteFlight, currentPassenger }) {
             setFlightObj(flightData)
             setSchedulesArray(flightData.schedules)
             setIsLoaded(!isLoaded)
-            checkIfPassengerCanEdit(flightData.passengers)
+            checkIfUserCanEdit(flightData.users)
         })
     }, [isScheduleDeleted, isScheduleAdded, isScheduleEdited, isEditedTravel, isEditedStay])
 
@@ -48,8 +48,8 @@ function FlightDetailPage({ deleteFlight, currentPassenger }) {
         history.push("/flightsbooked")
     }
 
-    function checkIfPassengerCanEdit(flightPassengers) {
-        if (flightPassengers.find(passenger => passenger.id === currentPassenger.id)) {
+    function checkIfUserCanEdit(flightUsers) {
+        if (flightUsers.find(user => user.id === currentUser.id)) {
             setIsEditable(true)
         }
     }
@@ -93,7 +93,7 @@ function FlightDetailPage({ deleteFlight, currentPassenger }) {
     }
 
     function editTravel(editedTravel) {
-        fetch(`/passenger_flights/${editedTravel.id}`, {
+        fetch(`/user_flights/${editedTravel.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -106,7 +106,7 @@ function FlightDetailPage({ deleteFlight, currentPassenger }) {
     }
 
     function editStay(editedStay) {
-        fetch(`/passenger_flights/${editedStay.id}`, {
+        fetch(`/user_flights/${editedStay.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -132,7 +132,7 @@ function FlightDetailPage({ deleteFlight, currentPassenger }) {
                     {isEditable ? <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete Flight</button> : null }
                 </div>
             </div>
-            {isEditable ? <TravelCard passengerFlight={flightObj.passenger_flight} editTravel={editTravel} editStay={editStay}/> : null}
+            {isEditable ? <TravelCard userFlight={flightObj.user_flight} editTravel={editTravel} editStay={editStay}/> : null}
             <p/>
             <h2 style={{margin: "auto"}}>Flight Schedules</h2>
             <p/>

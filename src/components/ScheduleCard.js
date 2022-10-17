@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function ScheduleCard({ schedule, isEditable, deleteSchedule, editSchedule }) {
 
-    const [currentPassengerSchedulesArr, setCurrentPassengerSchedulesArr] = useState([])
+    const [currentUserSchedulesArr, setCurrentUserSchedulesArr] = useState([])
     const [isEditForm, setIsEditForm] = useState(false)
     const [editScheduleObj, setEditScheduleObj] = useState({
         name: schedule.name,
@@ -17,9 +17,9 @@ function ScheduleCard({ schedule, isEditable, deleteSchedule, editSchedule }) {
     })
 
     useEffect(() => {
-        fetch("/passenger_schedules")
+        fetch("/user_schedules")
         .then(resp => resp.json())
-        .then(passengerSchedulesArr => setCurrentPassengerSchedulesArr(passengerSchedulesArr))
+        .then(userSchedulesArr => setCurrentUserSchedulesArr(userSchedulesArr))
     }, [])
 
     function handleInput(event) {
@@ -47,7 +47,7 @@ function ScheduleCard({ schedule, isEditable, deleteSchedule, editSchedule }) {
                     <p className="card-text">{schedule.date} at {schedule.start_time}</p>
                     <p className="card-text">{schedule.description}</p>
                     <p className="card-text">${schedule.cost}</p>
-                    {currentPassengerSchedulesArr.find(passengerSchedule => passengerSchedule.schedule_id === schedule.id) ? <button type="button" className="btn btn-success">Going</button> : <button type="button" className="btn btn-dark">Not Going</button>}
+                    {currentUserSchedulesArr.find(userSchedule => userSchedule.schedule_id === schedule.id) ? <button type="button" className="btn btn-success">Going</button> : <button type="button" className="btn btn-dark">Not Going</button>}
                     <p></p>
                     {isEditable ? <button type="button" className="btn btn-secondary" onClick={() => setIsEditForm(!isEditForm)}>Edit Activity</button> : null}
                     <span>             </span>
@@ -61,7 +61,7 @@ function ScheduleCard({ schedule, isEditable, deleteSchedule, editSchedule }) {
                     <p className="card-text"><input type="text" name="date" value={editScheduleObj.date} onChange={handleInput}/> at <input type="text" name="start_time" value={editScheduleObj.start_time} onChange={handleInput}/></p>
                     <p className="card-text"><input type="text" name="description" value={editScheduleObj.description} onChange={handleInput}/></p>
                     <p className="card-text">$<input type="text" name="cost" value={editScheduleObj.cost} onChange={handleInput}/></p>
-                    {currentPassengerSchedulesArr.find(passengerSchedule => passengerSchedule.schedule_id === schedule.id) ? <button type="button" className="btn btn-success">Going</button> : <button type="button" className="btn btn-dark">Not Going</button>}
+                    {currentUserSchedulesArr.find(userSchedule => userSchedule.schedule_id === schedule.id) ? <button type="button" className="btn btn-success">Going</button> : <button type="button" className="btn btn-dark">Not Going</button>}
                     <p></p>
                     {isEditable ? <button type="button" className="btn btn-secondary" onClick={handleSaveEdit}>Save Activity</button> : null}
                     <span>             </span>
